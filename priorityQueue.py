@@ -1,6 +1,6 @@
 import heapq
 
-class PriorityQeue:
+class PriorityQueue:
     def __init__(self):
         self.items = []
         self.count = 0
@@ -38,14 +38,21 @@ class PriorityQeue:
             print(self.items)
 
 def PQSort(int_list):
-    myHeap = []
+    mypq = PriorityQueue()
     for value in int_list:
-        heapq.heappush(myHeap, value)
-    return [heapq.heappop(myHeap) for i in range(len(myHeap))]
+        mypq.push(value, value)
+    return [mypq.pop() for i in range(mypq.count)]
+
+
+#def PQSort(int_list):
+#    myHeap = []
+#    for value in int_list:
+#        heapq.heappush(myHeap, value)
+#    return [heapq.heappop(myHeap) for i in range(len(myHeap))]
 
 
 if __name__ == "__main__":
-    q = PriorityQeue()
+    q = PriorityQueue()
     q.push("task1", 1) 
     q.push("task1", 2) 
     q.push("task0", 0) 
