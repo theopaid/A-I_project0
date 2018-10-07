@@ -6,12 +6,13 @@ class PriorityQueue:
         self.count = 0
 
     def isEmpty(self):
-        if not self.items:
+        if not self.items: #if theres nothing in 'items' list
             return True
         return False
     
     def push(self, item, priority):
-        self.count = self.count + 1
+        self.count += 1
+        # The first variable inserted (priority), is the one responsible for the ordering 
         heapq.heappush(self.items, [priority,item])
         print(self.items)
 
@@ -44,27 +45,20 @@ def PQSort(int_list):
     return [mypq.pop() for i in range(mypq.count)]
 
 
-#def PQSort(int_list):
-#    myHeap = []
-#    for value in int_list:
-#        heapq.heappush(myHeap, value)
-#    return [heapq.heappop(myHeap) for i in range(len(myHeap))]
-
-
-if __name__ == "__main__":
-    q = PriorityQueue()
-    q.push("task1", 1) 
-    q.push("task1", 2) 
-    q.push("task0", 0) 
-    t=q.pop() 
-    print(t) 
-    t=q.pop() 
-    print(t) 
-    q.push("task3", 3) 
-    q.push("task3", 4) 
-    q.push("task2", 0) 
-    t=q.pop()
-    print(t)
-    q.update("task4", 66)
-    print(PQSort([5,2,6,8,0,1,2,4]))
+#if __name__ == "__main__":
+#    q = PriorityQueue()
+#    q.push("task1", 1) 
+#    q.push("task1", 2) 
+#    q.push("task0", 0) 
+#    t=q.pop() 
+#    print(t) 
+#    t=q.pop() 
+#    print(t) 
+#    q.push("task3", 3) 
+#    q.push("task3", 4) 
+#    q.push("task2", 0) 
+#    t=q.pop()
+#    print(t)
+#    q.update("task4", 66)
+#    print(PQSort([5,2,6,8,0,1,2,4]))
             
